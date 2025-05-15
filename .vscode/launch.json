@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Built-in web server",
+      "type": "php",
+      "request": "launch",
+      "runtimeArgs": [
+        "-dxdebug.mode=develop,debug,profile,trace",
+        "-dxdebug.start_with_request=trigger",
+        "-dxdebug.trigger_value=",
+        "-dxdebug.output_dir=/tmp",
+        // "-dxdebug.client_host=127.0.0.1",
+        "-dxdebug.client_host=host.docker.internal",
+        "-S",
+        "0.0.0.0:0",
+        "index.php"
+      ],
+      "program": "",
+      "cwd": "${workspaceRoot}",
+      "port": 39003,
+      "serverReadyAction": {
+        "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
+        "uriFormat": "http://localhost:%s",
+        "action": "openExternally"
+      }
+    }
+  ]
+}
